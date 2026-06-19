@@ -1,5 +1,4 @@
-# Lab 6 - Security
-
+# Lab 6 - Policy and Governance
 
 ## 6.1 Setup the Namespaces
 

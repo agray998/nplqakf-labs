@@ -215,16 +215,16 @@ kubectl apply -f ingress.yml
 
 23. [23]The answer lies in the way that ingress works - the services used as backends for the ingress are assumed to exist in the same namespace as the ingress itself. The solution to this problem is the `ExternalName` service type, which we can use to create a `webserver` service in the ingress namespace which resolves to the cluster DNS of the target service in the webserver namespace
 
-24. [24]Review and apply the provided `ename-svc.yml` manifest to create the appropriate service into the ingress namespace:
+24. [24]Review and apply the provided `solutions/06_03_ename_svc.yml` manifest to create the appropriate service into the ingress namespace:
 
 ```bash
-kubectl apply -f ename-svc.yml
+kubectl apply -f solutions/06_03_ename-svc.yml
 ```
 Reload the browser tab. Is the webserver reachable now?
 
 25. [25]We have one more configuration issue to solve. The ExternalName service that we have just created creates a DNS record which is used to resolve the correct service in the webserver namespace. However, in order to do this, we need to be able to make requests to the `kube-dns` component to lookup the fully qualified service name. As this component runs in the `kube-system` namespace, egress traffic to it is currently blocked by our network policy.
 
-26. [26]Edit the `netpol-ingress.yml` manifest and add the following egress rule _in addition to_ the existing one:
+26. [26]Edit the `solutions/06_01_netpol_ingress.yml` manifest and add the following egress rule _in addition to_ the existing one:
 
 ```yaml
 - podSelector:

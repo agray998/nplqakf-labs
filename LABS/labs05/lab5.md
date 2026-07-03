@@ -9,7 +9,7 @@ We're going to create a pod that prints all of the logs of all of our randoms jo
 <p>
 
 ```bash
-kubectl create -f job.yaml # use the correct YAMLfest here
+kubectl create -f solutions/05_01_job.yaml # use the correct YAMLfest here
 ```
 
 </p>

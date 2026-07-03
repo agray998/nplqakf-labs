@@ -3,7 +3,7 @@
 
 We're going to create a pod that prints all of the logs of all of our randoms jobs.
 
-1. Recreate the Job from the previous lab (with 10 completions). Give it a few moments to complete.
+1. Create a job which will print a range of random numbers. Give it a few moments to complete.
 
 <details><summary>show command</summary>
 <p>
